@@ -1,1 +1,47 @@
+main = do
+  putStrLn  "Hello word"
+  putStrLn $ show res
+  putStrLn $ show res2
+  putStrLn $ show res2
+  
+  putStrLn $ show $ sum.map (*3) . filter (not . even) $ xs
+  
+  putStrLn $
+    show $
+    sum . map(*3) . filter ((/=0) . (`mod` 2)) $
+    xs
+  
+  putStrLn (show (map(h)xs))
+  
+  putStrLn $ show $ map (f . g) xs
+  
+  
+  
+xs = [4,5,6,7,8,9,1,2,3,4,5]
+
+quadrado x = x^2
+
+res = sum(
+  map quadrado
+  (filter even xs)  
+  )
+  
+  
+
+res2 = sum . map quadrado . filter even $ xs
+
+
+
+quad  = (^2)
+
+res3 = sum . map (^2) . filter even $ xs
+
+
+
+f x = x * 2
+g x = x + 1
+
+h = f .g
+
+
 
