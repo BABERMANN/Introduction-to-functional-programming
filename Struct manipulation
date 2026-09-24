@@ -1,0 +1,52 @@
+main = do
+  putStrLn $ show a1
+  putStrLn $ show a2
+  putStrLn $ show $ map nome sala
+  putStrLn $ show $ sum $ map sum $ map notas sala
+  
+  
+--numero de alunos que tem notas menores que cinco
+putStrLn $ 
+  show $
+  length $
+  filter((>0) . length) $
+  map (filter(<5.0) . notas) sala
+  
+
+  
+  
+data Turno = Integral | Noturno
+  deriving (Show)
+
+data Aluno = Aluno {
+  nome :: String,
+  ra :: Int,
+  turno :: Turno,
+  notas :: [Float]
+}
+  deriving (Show)
+
+a1 = Aluno{
+  nome = "Eredin",
+  ra = 3451544,
+  turno = Integral,
+  notas = [9.9,10,4.30]
+}
+
+a2 = a1 {turno = Noturno}
+
+sala = [
+      Aluno{
+        nome = "Eredin",
+        ra = 3451544,
+        turno = Integral,
+        notas = [9.9,10,4.30]
+      },
+    
+      Aluno{
+        nome = "din",
+        ra = 3451544,
+        turno = Integral,
+        notas = [9.9,10,4.30]
+      }
+  ]
