@@ -1,0 +1,7 @@
+main = do
+  lx <- getLine
+  ly <- getLine
+  let x = read lx
+  let y = read ly
+  let z = x + y
+  putStrLn $ show z
