@@ -1,0 +1,19 @@
+main = do
+  putStrLn $ show $ take 2 a
+  putStrLn $ show $ sum  $ take 10 b
+  --putStrLn $ show d
+  putStrLn $ show $ take 10 primos
+  putStrLn $ show $ takeWhile (<1000) $ filter (> 100) primos
+    
+
+
+a = [1..]
+
+b = map (*2) a
+
+c = sum b
+
+--d = c + 1
+
+p (x:xs) = x:p (filter ((/=0) . (`mod` x)) xs)
+primos = p [2..]
