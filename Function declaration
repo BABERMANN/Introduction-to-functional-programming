@@ -1,0 +1,22 @@
+main = do
+  putStrLn "Hw"
+  putStrLn $ show $ meuProd $ p
+  putStrLn $ show $ foldr (*) 1 xs
+  putStrLn $ show $ foldr (+) 0 xs
+  
+  
+  
+xs = [2,2,3,4,5,6,7,8,9]
+p = [2,2,2]
+  
+minhaSoma [] = 0
+minhaSoma (x:xs) = x + minhaSoma xs
+
+
+meuProd [] = 1
+meuProd (x:xs) = x * meuProd xs
+
+
+ys = [1..10]
+
+fat n = meuProd [1..n]
